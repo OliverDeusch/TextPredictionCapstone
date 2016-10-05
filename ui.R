@@ -1,4 +1,4 @@
-# ui.R
+# This is the user interface of the Shiny app.
 
 shinyUI(fluidPage(
   
