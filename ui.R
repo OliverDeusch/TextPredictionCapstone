@@ -8,7 +8,7 @@ shinyUI(fluidPage(
   
   sidebarLayout(
     sidebarPanel(
-      h5("Enter a partial sentence to complete:"),
+      h5("Enter a partial sentence to complete (at least one word):"),
       textInput("textsource", label = ""),
       hr(),
       p("Prediction is implemented using Ngrams and a Stupid Backoff Algorithm. Full details are provided in the Algorithm Details tab. Supporting information is also provided.")
@@ -30,7 +30,7 @@ shinyUI(fluidPage(
                  p("This app uses english text data collected from Twitter, blogs and news feeds by SwiftKey to generate a text corpus
                     as a basis for the text prediction algorithm. The following steps were carried out:"),
                  h5("1) Download SwiftKey data and load english subset of data into R"),
-                 h5("2) Subsample and combine to corpus"),
+                 h5("2) Subsample to 50% and combine to corpus"),
                  h5("3) Clean data, e.g. remove non ASCII characters, punctuation, etc."),
                  h5("4) Convert to words and create Ngrams (unigrams, bigrams, trigrams and quadgrams)"),
                  h5("5) Convert Ngrams to sorted frequency tables"),
@@ -64,7 +64,9 @@ shinyUI(fluidPage(
                  br(),
                  p("Supplementary information is stored on GitHub. This includes the code to download and process the text corpus,
                     the prediction algorithm and the UI and server scripts for the Shiny app."),
-                 a(href="https://github.com/OliverDeusch/TextPredictionCapstone", "GitHub page")
+                 a(href="https://github.com/OliverDeusch/TextPredictionCapstone", "GitHub page"),
+                 br(),
+                 a(href="http://rpubs.com/OliverDeusch/215725", "Short presentation on App at RPubs")
                  ) # tabPanel("Supplementary Information",        
       ) # tabsetPanel(
     ) # mainPanel(
